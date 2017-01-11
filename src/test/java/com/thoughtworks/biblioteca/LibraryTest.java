@@ -1,12 +1,8 @@
 package com.thoughtworks.biblioteca;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-
-
 import org.junit.Test;
-
-import static org.junit.Assert.*;
-import org.hamcrest.CoreMatchers.*;
-
 import java.util.ArrayList;
 
 /**
@@ -18,15 +14,23 @@ public class LibraryTest {
     public void shouldReturnWelcome(){
        Library library = new Library();
        library.start();
-       assertThat(library.start(), org.hamcrest.CoreMatchers.is("Welcome"));
+       assertThat(library.start(), is("Welcome"));
     }
 
     @Test
     public void shouldReturnList(){
         Library library = new Library();
         ArrayList<String> listOfBooks = new ArrayList();
-        assertThat(library.printListOfBooks(), org.hamcrest.CoreMatchers.is(listOfBooks));
+        assertThat(library.printListOfBooks(), is(listOfBooks));
 
+    }
+
+    @Test
+    public void shouldReturnBookName(){
+        Library library = new Library();
+        ArrayList<String> listOfBooks = new ArrayList();
+        String
+        assertThat(library.printListOfBooks(), is(listOfBooks));
     }
 
 }
