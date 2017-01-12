@@ -26,6 +26,7 @@ public class LibraryTest {
     @Before
     public void setUp() throws Exception {
         books = new ArrayList();
+        books.add("Harry Potter");
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         library = new Library(books, printStream, bufferedReader);
@@ -38,18 +39,10 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldReturnList(){
-        ArrayList<String> listOfBooks = new ArrayList();
-        assertThat(library.printListOfBooks(), is(listOfBooks));
+    public void shouldPrintList(){
+        library.printListOfBooks();
+        verify(printStream).println(books);
 
-    }
-
-    @Test
-    @Ignore
-    public void shouldReturnBookName(){
-        ArrayList<String> listOfBooks = new ArrayList();
-
-        //assertThat(library.printBookName(), is(listOfBooks[1].name()));
     }
 
 }

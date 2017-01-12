@@ -10,16 +10,22 @@ import java.util.List;
  */
 public class Library {
 
+    private final List<String> books;
+    private final PrintStream printStream;
+    private final BufferedReader bufferdReader;
+
     public Library(List<String> books, PrintStream printStream, BufferedReader bufferedReader) {
+        this.books = books;
+        this.printStream = printStream;
+        this.bufferdReader = bufferedReader;
     }
 
     public void start() {
-        System.out.println("Welcome");
+        printStream.println("Welcome");
     }
 
 
-    public ArrayList<String> printListOfBooks() {
-        ArrayList<String> listOfBooks = new ArrayList();
-        return listOfBooks;
+    public void printListOfBooks() {
+        printStream.println(books);
     }
 }
