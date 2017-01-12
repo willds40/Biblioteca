@@ -18,15 +18,17 @@ import java.util.List;
  * Created by gmartine on 1/11/17.
  */
 public class LibraryTest {
-    private List<String> books;
+    private List<Book> books;
     private PrintStream printStream;
     private Library library;
     private BufferedReader bufferedReader;
+    private Book bookToAdd;
 
     @Before
     public void setUp() throws Exception {
         books = new ArrayList();
-        books.add("Harry Potter");
+        bookToAdd = mock(Book.class);
+        books.add(bookToAdd);
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         library = new Library(books, printStream, bufferedReader);
@@ -39,9 +41,9 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldPrintList(){
+    public void shouldPrintAllBooksOneBook(){
         library.printListOfBooks();
-        verify(printStream).println(books);
+        verify(bookToAdd).printBookRecord();
 
     }
 

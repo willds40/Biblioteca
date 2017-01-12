@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class Library {
 
-    private final List<String> books;
+    private final List<Book> books;
     private final PrintStream printStream;
     private final BufferedReader bufferdReader;
 
-    public Library(List<String> books, PrintStream printStream, BufferedReader bufferedReader) {
+    public Library(List<Book> books, PrintStream printStream, BufferedReader bufferedReader) {
         this.books = books;
         this.printStream = printStream;
         this.bufferdReader = bufferedReader;
@@ -26,6 +26,14 @@ public class Library {
 
 
     public void printListOfBooks() {
-        printStream.println(books);
+        printStream.println(printColumnHeaders());
+        books.get(0).printBookRecord();
+    }
+
+    private static String printColumnHeaders() {
+        String columnHeaders = String.format("%-50s", "Title");
+        columnHeaders += String.format("%-25s", "Author");
+        columnHeaders += "Year Published\n";
+        return columnHeaders;
     }
 }

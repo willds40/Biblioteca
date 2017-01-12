@@ -11,12 +11,16 @@ import java.util.List;
  */
 public class main {
     public static void main(String[] args) {
-        List<String> books = new ArrayList<String>();
-        PrintStream printStream = new PrintStream(System.out);
+        List<Book> books = new ArrayList<Book>();
+        PrintStream printStream = System.out;
+        Book book = new Book(printStream, "Romeo and Juliet", "Shakespeare", 1600);
+        books.add(book);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         Library library = new Library(books, printStream, bufferedReader);
         library.start();
-        library.printListOfBooks();
+        book.printAuthor();
+        book.printYearPublished();
+//        library.printListOfBooks();
 
     }
 
