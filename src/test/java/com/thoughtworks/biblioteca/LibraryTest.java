@@ -6,7 +6,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -32,12 +31,6 @@ public class LibraryTest {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         library = new Library(books, printStream, bufferedReader);
-    }
-
-    @Test
-    public void shouldPrintWelcome(){
-       library.start();
-       verify(printStream).println("Welcome");
     }
 
     @Test

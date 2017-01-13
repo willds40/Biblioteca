@@ -18,18 +18,6 @@ public class Book {
 
     }
 
-    public void printTitle() {
-        printStream.println(this.title);
-    }
-
-    public void printAuthor() {
-        printStream.println(this.author);
-    }
-
-    public void printYearPublished() {
-        printStream.println(this.yearPublished);
-    }
-
     public void printBookRecord(){
         String bookRecord = String.format("%-50s", title);
         bookRecord += String.format("%-25s", author);

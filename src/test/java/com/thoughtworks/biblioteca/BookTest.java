@@ -34,25 +34,6 @@ public class BookTest {
     }
 
     @Test
-    public void shouldPrintTitle() {
-        book.printTitle();
-        verify(printStream).println("Romeo and Juliet");
-    }
-
-    @Test
-    public void shouldPrintAuthor()
-    {
-        book.printAuthor();
-        verify(printStream).println("Shakespeare");
-    }
-
-    @Test
-    public void shouldPrintYearPublished() {
-        book.printYearPublished();
-        verify(printStream).println(1600);
-    }
-
-    @Test
     public void shouldPrintBookRecord(){
         String record = String.format("%-50s", "Romeo and Juliet");
         record += String.format("%-25s", "Shakespeare");

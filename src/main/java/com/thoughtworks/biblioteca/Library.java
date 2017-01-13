@@ -20,9 +20,6 @@ public class Library {
         this.bufferdReader = bufferedReader;
     }
 
-    public void start() {
-        printStream.println("Welcome");
-    }
 
 
     public void printListOfBooks() {
