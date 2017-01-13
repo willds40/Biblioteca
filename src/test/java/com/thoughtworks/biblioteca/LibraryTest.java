@@ -40,4 +40,14 @@ public class LibraryTest {
 
     }
 
+    @Test
+    public void shouldPrintAllBooksForMultipleBooks() {
+        Book secondBookToAdd = mock(Book.class);
+        books.add(secondBookToAdd);
+
+        library.printListOfBooks();
+
+        verify(secondBookToAdd).printBookRecord();
+    }
+
 }

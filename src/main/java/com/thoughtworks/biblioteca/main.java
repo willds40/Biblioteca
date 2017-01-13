@@ -15,7 +15,9 @@ public class main {
         PrintStream printStream = System.out;
         List<Book> books = new ArrayList<Book>();
         Book book = new Book(printStream, "Romeo and Juliet", "Shakespeare", 1600);
+        Book bookTwo = new Book(printStream, "Hamlet", "Shakespeare", 1600);
         books.add(book);
+        books.add(bookTwo);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         Library library = new Library(books, printStream, bufferedReader);
         Application application = new Application(printStream);

@@ -20,11 +20,11 @@ public class Library {
         this.bufferdReader = bufferedReader;
     }
 
-
-
     public void printListOfBooks() {
         printStream.println(printColumnHeaders());
-        books.get(0).printBookRecord();
+        for (Book book : books) {
+            book.printBookRecord();
+        }
     }
 
     private static String printColumnHeaders() {
