@@ -35,7 +35,9 @@ public class MenuTest {
     public void shouldDisplayOptions() throws IOException {
         menu.displayOptions();
 
-        verify(printStream).println("1. List Books");
+        verify(printStream).println(
+                "1. List Books\n" +
+                "2. Quit");
     }
 
     @Test
@@ -53,5 +55,14 @@ public class MenuTest {
         menu.displayOptions();
         verify(library).printListOfBooks();
 
+    }
+
+    @Test
+    public void shouldLoopUntilQuitIsSelected() throws IOException {
+        when(bufferedReader.readLine()).thenReturn("1").thenReturn("1").thenReturn("2");
+
+        menu.displayOptions();
+
+        verify(printStream).println("Goodbye!");
     }
 }

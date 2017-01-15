@@ -22,20 +22,27 @@ public class Menu {
     }
 
     public void displayOptions() throws IOException {
-        printStream.println("1. List Books");
+        printStream.println(
+                "1. List Books\n" +
+                "2. Quit");
+
         receiveUserInput();
 
     }
 
     private void receiveUserInput() throws IOException {
         userInput = bufferedReader.readLine();
-        if (userInput.equals("1")){
-            library.printListOfBooks();
-        }
-        else{
-            printStream.println("Invalid Option. Please Select Again.");
-            displayOptions();
-        }
+        do {
+            if (userInput.equals("1")) {
+                library.printListOfBooks();
+                displayOptions();
+            } else if (userInput.equals("2")) {
+                printStream.println("Goodbye!");
+            } else {
+                printStream.println("Invalid Option. Please Select Again.");
+                displayOptions();
+            }
+        }while(!userInput.equals("2"));
 
     }
 }
