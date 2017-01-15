@@ -36,8 +36,8 @@ public class LibraryTest {
     @Test
     public void shouldPrintAllBooksOneBook(){
         library.printListOfBooks();
-        verify(bookToAdd).printBookRecord();
 
+        verify(bookToAdd).printBookRecord();
     }
 
     @Test

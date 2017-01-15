@@ -12,12 +12,12 @@ public class Library {
 
     private final List<Book> books;
     private final PrintStream printStream;
-    private final BufferedReader bufferdReader;
+    private final BufferedReader bufferedReader;
 
     public Library(List<Book> books, PrintStream printStream, BufferedReader bufferedReader) {
         this.books = books;
         this.printStream = printStream;
-        this.bufferdReader = bufferedReader;
+        this.bufferedReader = bufferedReader;
     }
 
     public void printListOfBooks() {

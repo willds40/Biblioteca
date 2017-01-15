@@ -1,20 +1,26 @@
 package com.thoughtworks.biblioteca;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.awt.*;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Application {
     private  PrintStream printStream;
+    private final Library library;
+    private final PrintStream stream;
+    private Menu menu;
 
-    public Application(PrintStream printStream) {
+
+    public Application(PrintStream printStream, Library library, PrintStream stream, Menu menu) {
         this.printStream = printStream;
+        this.library = library;
+        this.stream = stream;
+        this.menu = menu;
     }
 
-    public void welcomeToTheLibrary() {
-            printStream.println("Welcome");
-    }
+    public void startApplication() throws IOException {
+        printStream.println("Welcome");
+        menu.displayOptions();
 
+    }
 }
