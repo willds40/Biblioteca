@@ -33,6 +33,8 @@ public class MenuTest {
 
     @Test
     public void shouldDisplayOptions() throws IOException {
+        when(bufferedReader.readLine()).thenReturn("");
+
         menu.displayOptions();
 
         verify(printStream).println(
